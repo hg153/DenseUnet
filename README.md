@@ -40,5 +40,5 @@ python eval.py --input './datasets/data/sample_dataset' --model 'fcn_denseunetv1
 ### 5. Prediction  
 Use the following command to predict images in a folder.  
 ```bash
-python predict.py --input 'datasets\data\sample_dataset\images\val' --dataset 'crack' --model 'fcn_denseunetv1' --ckpt 'denseunetv1.pth' --save_val_results_to 'results'
+python predict.py --input 'datasets/data/sample_dataset/images/val' --dataset 'crack' --model 'fcn_denseunetv1' --ckpt 'denseunetv1.pth' --save_val_results_to 'results'
 ``` 
