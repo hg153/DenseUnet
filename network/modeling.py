@@ -4,7 +4,7 @@ from ._fcn import FCNHead, FCN, UNetHead
 from ._deepcrack import DeepCrackHead, DeepCrackv1
 from .backbone import (
     unet,
-    denseunet,
+    denseunetv1,
     denseunetv2,
     resnet,
     deepcrack,
@@ -134,8 +134,8 @@ def _load_model(arch_type, backbone, num_classes, output_stride, pretrained_back
     elif backbone == 'unet':
         model = _segm_unet(arch_type, backbone, num_classes, output_stride=output_stride, pretrained_backbone=pretrained_backbone)
 
-    elif backbone == 'denseunet':
-        model = _segm_denseunet(arch_type, backbone, num_classes, output_stride=output_stride, pretrained_backbone=pretrained_backbone)
+    elif backbone == 'denseunetv1':
+        model = _segm_denseunetv1(arch_type, backbone, num_classes, output_stride=output_stride, pretrained_backbone=pretrained_backbone)
 
     elif backbone == 'denseunetv2':
         model = _segm_denseunetv2(arch_type, backbone, num_classes, output_stride=output_stride, pretrained_backbone=pretrained_backbone)
@@ -277,9 +277,9 @@ def fcn_unet(num_classes = 2, output_stride = 8, pretrained_backbone = False):
 
     return _load_model('fcn', 'unet', num_classes, output_stride=output_stride, pretrained_backbone=pretrained_backbone )
 
-def _segm_denseunet(name, backbone_name, num_classes, output_stride, pretrained_backbone):
+def _segm_denseunetv1(name, backbone_name, num_classes, output_stride, pretrained_backbone):
 
-    backbone = denseunet.denseunet()
+    backbone = denseunetv1.denseunet()
 
     in_channels = 64
     classifier = UNetHead(in_channels, num_classes)
@@ -289,10 +289,10 @@ def _segm_denseunet(name, backbone_name, num_classes, output_stride, pretrained_
     return model    
 
 
-def fcn_denseunet(num_classes = 2, output_stride = 8, pretrained_backbone = False):
+def fcn_denseunetv1(num_classes = 2, output_stride = 8, pretrained_backbone = False):
     """ Construct a basic CNN model """
 
-    return _load_model('fcn', 'denseunet', num_classes, output_stride=output_stride, pretrained_backbone=pretrained_backbone )
+    return _load_model('fcn', 'denseunetv1', num_classes, output_stride=output_stride, pretrained_backbone=pretrained_backbone )
 
 def _segm_denseunetv2(name, backbone_name, num_classes, output_stride, pretrained_backbone):
 
