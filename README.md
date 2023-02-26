@@ -9,8 +9,13 @@ Modified U-Net for pavement crack segmentation. This repository adopted codes fr
 |UNet|-|
 |DenseUnetv1|Extra skip connections in both encoder and decoder|
 |DenseUnetv2|Extra skip connections in encoder only ||  
+Note: The UNet is modified with the implementation of paddings. Feature maps do no shrink due to convolution operations.  
   
 ### 2. Train a model from stratch  
+To train a model using UNet as backbone:  
+```bash 
+python main.py --data_root './datasets/data/sample_dataset' --model 'fcn_unet' --dataset 'crack' total_epochs 100
+```
 To train a model using DenseUnetv1 as backbone:  
 ```bash 
 python main.py --data_root './datasets/data/sample_dataset' --model 'fcn_denseunetv1' --dataset 'crack' total_epochs 100
