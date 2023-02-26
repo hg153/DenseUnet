@@ -35,4 +35,10 @@ Trained models will be saved in the `checkpoints` folder.
 Use the following command to evaluate the trained DenseUnetv1 model. Due to the imprecise crack annotation, a strategy of relaxation can be implemented, where predicted crack pixels within 2 pixels from the ground-truth will be considered correct detection.   
 ```bash
 python eval.py --input './datasets/data/sample_dataset' --model 'fcn_denseunetv1' --relaxation True --ckpt 'your trianed model'
-```
+```  
+  
+### 5. Prediction  
+Use the following command to predict images in a folder.  
+```bash
+python predict.py --input 'datasets\data\sample_dataset\images\val' --dataset 'crack' --model 'fcn_denseunetv1' --ckpt 'denseunetv1.pth' --save_val_results_to 'results'
+``` 
