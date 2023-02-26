@@ -9,6 +9,7 @@ Modified U-Net for pavement crack segmentation. This repository adopted codes fr
 |UNet|-|
 |DenseUnetv1|Extra skip connections in both encoder and decoder|
 |DenseUnetv2|Extra skip connections in encoder only ||  
+
 Note: The UNet is modified with the implementation of paddings. Feature maps do no shrink due to convolution operations.  
   
 ### 2. Train a model from stratch  
