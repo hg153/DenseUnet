@@ -19,15 +19,15 @@ Ground-truth image has only two values, with 0 indicating background and 1 indic
 ### 3. Train a model from stratch  
 To train a model using UNet as backbone:  
 ```bash 
-python main.py --data_root './datasets/data/sample_dataset' --model 'fcn_unet' --dataset 'crack' total_epochs 100
+python main.py --data_root './datasets/data/sample_dataset' --model 'fcn_unet' --dataset 'crack' --total_epochs 100
 ```
 To train a model using DenseUnetv1 as backbone:  
 ```bash 
-python main.py --data_root './datasets/data/sample_dataset' --model 'fcn_denseunetv1' --dataset 'crack' total_epochs 100
+python main.py --data_root './datasets/data/sample_dataset' --model 'fcn_denseunetv1' --dataset 'crack' --total_epochs 100
 ```
 To train a model using DenseUnetv2 as backbone:  
 ```bash 
-python main.py --data_root './datasets/data/sample_dataset' --model 'fcn_denseunetv2' --dataset 'crack' total_epochs 100
+python main.py --data_root './datasets/data/sample_dataset' --model 'fcn_denseunetv2' --dataset 'crack' --total_epochs 100
 ```
 Trained models will be saved in the `checkpoints` folder.  
   
