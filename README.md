@@ -10,6 +10,11 @@ Modified U-Net for pavement crack segmentation. This repository adopted codes fr
 |DenseUnetv1|Extra skip connections in both encoder and decoder|
 |DenseUnetv2|Extra skip connections in encoder only ||  
 
+The architechure of DenseUnetv1 is like below:  
+![image](https://user-images.githubusercontent.com/58408775/221451701-3948b5d8-47fb-432c-b4da-24caccec5406.png)
+The architechure of DenseUnetv2 is like below:  
+![image](https://user-images.githubusercontent.com/58408775/221451623-9e03e158-5ccd-4e50-b51d-48b5f28a5dd5.png)
+
 Note: The UNet is modified with the implementation of paddings. Feature maps do no shrink due to convolution operations.  
 
 ### 2. Dataset  
